@@ -33,18 +33,18 @@ class MCRcon:
 
             #Error checking
             if tmp_data[-2:] != '\x00\x00':
-                raise Exception('protocol failure', 'non-null pad bytes')
+                raise Exception('Protocol Failure', 'non-null pad bytes')
             tmp_data = tmp_data[:-2]
             
             #if tmp_type != out_type:
             #    raise Exception('protocol failure', 'type mis-match', tmp_type, out_type)
            
             if tmp_req_id == -1:
-                raise Exception('auth failure')
+                raise Exception('Auth Failure')
            
             m = re.match('^Error executing: %s \((.*)\)$' % re.escape(out_data), tmp_data)
             if m:
-                raise Exception('command failure', m.group(1))
+                raise Exception('Command Failure', m.group(1))
             
             #Append
             in_data += tmp_data
