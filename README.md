@@ -1,7 +1,7 @@
 MCRcon
 ======
 
-Library and CLI for Minecraft's RCON Libraries
+Library and CLI for Minecraft's RCON
 
 Example Usage
 -------------
